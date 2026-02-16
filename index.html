@@ -1034,6 +1034,151 @@
             animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 1s both;
         }
 
+        /* ========== ENHANCED ANIMATIONS ========== */
+
+        /* Floating animation for icons */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .feature-icon {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .feature-card:nth-child(2) .feature-icon { animation-delay: 0.5s; }
+        .feature-card:nth-child(3) .feature-icon { animation-delay: 1s; }
+        .feature-card:nth-child(4) .feature-icon { animation-delay: 1.5s; }
+        .feature-card:nth-child(5) .feature-icon { animation-delay: 2s; }
+        .feature-card:nth-child(6) .feature-icon { animation-delay: 2.5s; }
+
+        /* Subtle glow pulse for step numbers */
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 0 30px rgba(255, 255, 255, 0.1), 0 0 60px rgba(255, 255, 255, 0.05); }
+            50% { box-shadow: 0 0 40px rgba(255, 255, 255, 0.2), 0 0 80px rgba(251, 146, 60, 0.1); }
+        }
+
+        .step-number {
+            animation: glowPulse 3s ease-in-out infinite;
+        }
+
+        .step:nth-child(2) .step-number { animation-delay: 1s; }
+        .step:nth-child(3) .step-number { animation-delay: 2s; }
+
+        /* Shimmer effect for gradient text */
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .hero h1 span {
+            background-size: 200% auto;
+            animation: shimmer 4s linear infinite;
+        }
+
+        /* Subtle bounce for CTA buttons */
+        @keyframes subtleBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+
+        .cta .btn-primary {
+            animation: subtleBounce 2s ease-in-out infinite;
+        }
+
+        /* Card hover lift enhancement */
+        .feature-card, .testimonial-card, .pricing-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Typing cursor effect for hero subtitle */
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* Smooth gradient border animation */
+        @keyframes borderGlow {
+            0%, 100% { border-color: rgba(255, 255, 255, 0.1); }
+            50% { border-color: rgba(251, 146, 60, 0.3); }
+        }
+
+        .feature-card:hover {
+            animation: none;
+        }
+
+        /* Stats counter animation trigger */
+        .stat-number {
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .stat:hover .stat-number {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 40px rgba(251, 146, 60, 0.4));
+        }
+
+        /* Testimonial avatar pulse */
+        @keyframes avatarPulse {
+            0%, 100% { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); }
+            50% { box-shadow: 0 4px 30px rgba(255, 255, 255, 0.15); }
+        }
+
+        .testimonial-avatar {
+            animation: avatarPulse 3s ease-in-out infinite;
+        }
+
+        /* Showcase preview subtle rotation */
+        .showcase-preview span {
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Logo subtle animation */
+        nav .logo {
+            transition: all 0.3s ease;
+        }
+
+        nav .logo:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+        }
+
+        /* Pricing card featured glow */
+        @keyframes featuredGlow {
+            0%, 100% { box-shadow: 0 20px 60px rgba(255, 255, 255, 0.1), 0 0 80px rgba(251, 146, 60, 0.05); }
+            50% { box-shadow: 0 25px 70px rgba(255, 255, 255, 0.15), 0 0 100px rgba(251, 146, 60, 0.1); }
+        }
+
+        .pricing-card.featured {
+            animation: featuredGlow 4s ease-in-out infinite;
+        }
+
+        /* Scroll indicator enhanced animation */
+        .promo-scroll-arrow {
+            animation: scrollBounce 1.5s ease-in-out infinite;
+        }
+
+        /* Text reveal animation for section headers */
+        @keyframes textReveal {
+            0% {
+                clip-path: inset(0 100% 0 0);
+                opacity: 0;
+            }
+            100% {
+                clip-path: inset(0 0 0 0);
+                opacity: 1;
+            }
+        }
+
+        .section-title {
+            animation: textReveal 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation-play-state: paused;
+        }
+
+        .section-header.animate-in .section-title {
+            animation-play-state: running;
+        }
+
         /* ========== PROMO SECTION ========== */
         .promo-section {
             position: relative;
@@ -1779,46 +1924,46 @@
         <div class="promo-slide active" data-slide="1">
             <div class="promo-slide-content">
                 <h1 class="promo-gradient-text">Message.ai</h1>
-                <p>The future of ministry content</p>
+                <p>Where Every Sermon Becomes A Movement</p>
             </div>
         </div>
 
         <!-- Slide 2: Problem -->
         <div class="promo-slide" data-slide="2">
             <div class="promo-slide-content">
-                <h2>Your sermon reaches hundreds on Sunday.</h2>
-                <p>But what about the other six days?</p>
+                <h2>Your Words Deserve To Echo Beyond Sunday.</h2>
+                <p>What If They Could Reach Thousands, Every Single Day?</p>
             </div>
         </div>
 
         <!-- Slide 3: Solution -->
         <div class="promo-slide" data-slide="3">
             <div class="promo-slide-content">
-                <h2>One sermon.<br><span class="promo-gradient-warm">Endless content.</span></h2>
-                <p>AI that transforms your message into a week of engagement.</p>
+                <h2>One Message.<br><span class="promo-gradient-warm">Infinite Impact.</span></h2>
+                <p>AI That Turns Your Sermons Into A Week Of Transformation.</p>
             </div>
         </div>
 
         <!-- Slide 4: Features -->
         <div class="promo-slide" data-slide="4">
             <div class="promo-slide-content">
-                <h2 class="promo-gradient-text">Everything you need</h2>
+                <h2 class="promo-gradient-text">Everything You Need</h2>
                 <div class="promo-features">
                     <div class="promo-feature">
                         <div class="promo-feature-icon">🎬</div>
-                        <span>Viral-ready video clips</span>
+                        <span>Viral-Ready Video Clips</span>
                     </div>
                     <div class="promo-feature">
                         <div class="promo-feature-icon">📝</div>
-                        <span>Discussion guides</span>
+                        <span>Discussion Guides</span>
                     </div>
                     <div class="promo-feature">
                         <div class="promo-feature-icon">✨</div>
-                        <span>Daily devotionals</span>
+                        <span>Daily Devotionals</span>
                     </div>
                     <div class="promo-feature">
                         <div class="promo-feature-icon">📧</div>
-                        <span>Weekly recaps</span>
+                        <span>Weekly Recaps</span>
                     </div>
                 </div>
             </div>
@@ -1827,7 +1972,7 @@
         <!-- Slide 5: Stats -->
         <div class="promo-slide" data-slide="5">
             <div class="promo-slide-content">
-                <h2>Trusted by <span class="promo-gradient-warm">500+</span> churches</h2>
+                <h2>Trusted By <span class="promo-gradient-warm">500+</span> Churches</h2>
                 <div class="promo-stats">
                     <div class="promo-stat">
                         <div class="promo-stat-number">50K+</div>
@@ -1835,7 +1980,7 @@
                     </div>
                     <div class="promo-stat">
                         <div class="promo-stat-number">10M+</div>
-                        <div class="promo-stat-label">People Reached</div>
+                        <div class="promo-stat-label">Lives Touched</div>
                     </div>
                 </div>
             </div>
@@ -1844,7 +1989,7 @@
         <!-- Slide 6: Testimonial -->
         <div class="promo-slide" data-slide="6">
             <div class="promo-slide-content">
-                <p style="font-size: clamp(22px, 4vw, 38px); font-style: italic; color: rgba(255,255,255,0.9); max-width: 800px;">"Message.ai has transformed how we reach our community."</p>
+                <p style="font-size: clamp(22px, 4vw, 38px); font-style: italic; color: rgba(255,255,255,0.9); max-width: 800px;">"This Changed Everything For Our Ministry."</p>
                 <p style="margin-top: 20px; color: rgba(255,255,255,0.5); font-size: 16px;">— Pastor James Mitchell, Grace Community Church</p>
             </div>
         </div>
@@ -1852,8 +1997,8 @@
         <!-- Slide 7: CTA -->
         <div class="promo-slide" data-slide="7">
             <div class="promo-slide-content">
-                <h2>Ready to amplify<br><span class="promo-gradient-text">your message?</span></h2>
-                <a href="#features" class="promo-cta">Explore Features</a>
+                <h2>Ready To Multiply<br><span class="promo-gradient-text">Your Impact?</span></h2>
+                <a href="#features" class="promo-cta">Start Your Journey</a>
             </div>
         </div>
 
@@ -1879,8 +2024,8 @@
     <section class="hero">
         <div class="container">
             <span class="hero-badge">AI-Powered Ministry Tools</span>
-            <h1>Transform Your Sermons Into <span>Powerful Content</span></h1>
-            <p>Automatically convert your Sunday messages into engaging social clips, devotionals, discussion guides, and more. Extend your ministry's reach throughout the week.</p>
+            <h1>One Message. <span>Infinite Impact.</span></h1>
+            <p>Your Words Deserve To Be Heard Beyond Sunday. We Transform Your Sermons Into Scroll-Stopping Content That Reaches Hearts All Week Long.</p>
             <div class="hero-buttons">
                 <a href="#" class="btn btn-primary btn-large">Start Free Trial</a>
                 <a href="#" class="btn btn-outline btn-large">Watch Demo</a>
@@ -1905,7 +2050,7 @@
     <!-- Trusted By Section -->
     <section class="trusted">
         <div class="container">
-            <p>Trusted by churches across the nation</p>
+            <p>Trusted By Churches Across The Nation</p>
             <div class="trusted-logos">
                 <span class="trusted-logo">Grace Community</span>
                 <span class="trusted-logo">Hillside Church</span>
@@ -1921,39 +2066,39 @@
         <div class="container">
             <div class="section-header">
                 <p class="section-label">Features</p>
-                <h2 class="section-title">Everything You Need to Amplify Your Message</h2>
-                <p class="section-subtitle">Our AI-powered tools handle the content creation so you can focus on what matters most - your ministry.</p>
+                <h2 class="section-title">Everything You Need To Amplify Your Message</h2>
+                <p class="section-subtitle">Powerful AI Tools That Handle The Heavy Lifting, So You Can Focus On What Matters Most — Changing Lives.</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🎬</div>
-                    <h3>AI Video Clips</h3>
-                    <p>Automatically generate captioned social media clips from your sermons. Perfect for Instagram Reels, TikTok, and YouTube Shorts.</p>
+                    <h3>Viral-Ready Video Clips</h3>
+                    <p>Captivating, Captioned Clips That Stop The Scroll. Perfect For Instagram Reels, TikTok, And YouTube Shorts.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📝</div>
                     <h3>Discussion Guides</h3>
-                    <p>Generate small group discussion questions and study materials that help your congregation dive deeper into each message.</p>
+                    <p>Spark Deeper Conversations. Generate Thought-Provoking Questions That Transform Small Groups.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">✨</div>
                     <h3>Daily Devotionals</h3>
-                    <p>Create week-long devotional content based on your sermon themes, keeping your congregation engaged every day.</p>
+                    <p>Keep Hearts Engaged All Week. Beautiful Devotionals That Extend Your Message Into Daily Life.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">💬</div>
                     <h3>Sermon Assistant</h3>
-                    <p>AI-powered chat tool to help develop sermon ideas, find illustrations, and discover relevant scripture references.</p>
+                    <p>Your AI Creative Partner. Find Illustrations, Scripture References, And Fresh Ideas In Seconds.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📧</div>
                     <h3>Weekly Recaps</h3>
-                    <p>Automated email summaries and key takeaways ready to share with your congregation every week.</p>
+                    <p>Never Miss A Moment. Beautifully Crafted Email Summaries Ready To Inspire Your Congregation.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📊</div>
                     <h3>Analytics Dashboard</h3>
-                    <p>Track engagement across all your content and understand what resonates most with your audience.</p>
+                    <p>See Your Impact. Track Engagement And Discover What Resonates Most With Your Community.</p>
                 </div>
             </div>
         </div>
@@ -1964,24 +2109,24 @@
         <div class="container">
             <div class="section-header">
                 <p class="section-label">How It Works</p>
-                <h2 class="section-title">From Sermon to Content in Three Steps</h2>
-                <p class="section-subtitle">Our streamlined process makes content creation effortless.</p>
+                <h2 class="section-title">From Sermon To Content In Three Simple Steps</h2>
+                <p class="section-subtitle">Effortless. Powerful. Game-Changing.</p>
             </div>
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3>Upload Your Sermon</h3>
-                    <p>Simply upload your video or audio file, or connect directly with your church management system.</p>
+                    <p>Drop Your Video Or Audio File. That's It. We Handle Everything Else.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>AI Processing</h3>
-                    <p>Our AI analyzes your content, identifying key moments, themes, and opportunities for engagement.</p>
+                    <h3>AI Magic Happens</h3>
+                    <p>Our AI Finds The Gold — Key Moments, Powerful Quotes, And Shareable Insights.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Review & Publish</h3>
-                    <p>Review generated content, make any edits, and publish across all your channels with one click.</p>
+                    <h3>Review & Share</h3>
+                    <p>Polish Your Content And Publish Everywhere With A Single Click.</p>
                 </div>
             </div>
         </div>
@@ -1992,14 +2137,14 @@
         <div class="container">
             <div class="showcase-grid">
                 <div class="showcase-content">
-                    <h2>Captioned Clips That Capture Attention</h2>
-                    <p>Our AI automatically identifies the most impactful moments from your sermons and creates scroll-stopping clips with beautiful, customizable captions.</p>
+                    <h2>Clips That Captivate. Content That Converts.</h2>
+                    <p>Our AI Finds The Most Powerful Moments From Your Sermons And Transforms Them Into Scroll-Stopping Content Your Audience Can't Ignore.</p>
                     <ul class="showcase-list">
-                        <li>Automatic highlight detection</li>
-                        <li>Customizable caption styles and fonts</li>
-                        <li>Karaoke-style word highlighting</li>
-                        <li>Optimized for all social platforms</li>
-                        <li>Brand colors and logo overlays</li>
+                        <li>Smart Highlight Detection</li>
+                        <li>Stunning Caption Styles</li>
+                        <li>Karaoke-Style Word Animation</li>
+                        <li>Optimized For Every Platform</li>
+                        <li>Your Brand, Your Colors</li>
                     </ul>
                     <a href="#" class="btn btn-primary">See Examples</a>
                 </div>
@@ -2017,7 +2162,7 @@
         <div class="container">
             <div class="section-header">
                 <p class="section-label">Testimonials</p>
-                <h2 class="section-title">What Ministry Leaders Are Saying</h2>
+                <h2 class="section-title">Trusted By Ministry Leaders Everywhere</h2>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
@@ -2059,8 +2204,8 @@
         <div class="container">
             <div class="section-header">
                 <p class="section-label">Pricing</p>
-                <h2 class="section-title">Simple, Transparent Pricing</h2>
-                <p class="section-subtitle">Choose the plan that fits your ministry's needs.</p>
+                <h2 class="section-title">Invest In Your Impact</h2>
+                <p class="section-subtitle">Simple Plans. Powerful Results. No Surprises.</p>
             </div>
             <div class="pricing-grid">
                 <div class="pricing-card">
@@ -2109,9 +2254,9 @@
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
-            <h2>Ready to Amplify Your Ministry?</h2>
-            <p>Join hundreds of churches using AI to extend their reach and deepen discipleship throughout the week.</p>
-            <a href="#" class="btn btn-primary btn-large">Start Your Free Trial</a>
+            <h2>Ready To Multiply Your Impact?</h2>
+            <p>Join Hundreds Of Churches Already Reaching More People, More Often, With Less Effort.</p>
+            <a href="#" class="btn btn-primary btn-large">Start Free — No Credit Card Required</a>
         </div>
     </section>
 
